@@ -187,7 +187,7 @@ class Tor:
         **Returns:**
         str
         '''
-        return f'socks5://127.0.0.1:{self.socks_port}'
+        return f'socks5h://127.0.0.1:{self.socks_port}'
 
     def bind(self, module):
         '''

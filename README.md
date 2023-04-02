@@ -32,4 +32,18 @@ Any connection made through the socket library will be proxied through Tor from 
 
 It is enough to make it work for `requests`, `urllib`, `httpx`, etc.
 
+
+You can also use the proxy manually, without binding:
+
+```python
+import basla
+import requests
+
+tor = basla.Tor()
+session = requests.session()
+session.proxies = {
+    'https': tor.get_formatted_proxy()
+}
+```
+
 For full examples, please take a look at the [examples](examples) folder.
